@@ -1,0 +1,26 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "plugins": ["import", "prettier", "react", "unicorn"],
+  "extends": [
+    "xo",
+    "xo-react",
+    "plugin:unicorn/recommended",
+    "plugin:import/recommended",
+    "prettier/react",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".json", ".android.js", ".ios.js"]
+      }
+    }
+  }
+}
