@@ -4,7 +4,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {StatusBar} from 'react-native';
 import {connect} from 'react-redux';
-import {addNavigationHelpers} from 'react-navigation';
 import styled from 'styled-components/native';
 import Navigator from './navigation';
 
@@ -19,6 +18,7 @@ type Props = {
   addListener: Function
 };
 
+// $FlowFixMe
 console.disableYellowBox = true;
 
 const App = ({navigation, dispatch, addListener}: Props) => (

@@ -1,7 +1,7 @@
 import React from 'react';
 import {createMaterialTopTabNavigator, createStackNavigator} from 'react-navigation';
 import {Text, View} from 'react-native';
-import OrderBook from '../order-book';
+import SmartOrderBook from '../order-book';
 import {silver} from '../theme/colors';
 
 const MarketTrades = () => (
@@ -13,7 +13,7 @@ const MarketTrades = () => (
 const TradesTopTabNavigator = createMaterialTopTabNavigator(
   {
     OrderBookScreen: {
-      screen: OrderBook,
+      screen: SmartOrderBook,
       navigationOptions: {
         title: 'Order Book'
       }
