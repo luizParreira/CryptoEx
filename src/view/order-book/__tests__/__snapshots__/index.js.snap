@@ -1,5 +1,118 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`OrderBook renders successfully when loading 1`] = `
+<RCTScrollView
+  style={
+    Array [
+      Object {
+        "marginBottom": 0,
+        "marginLeft": 16,
+        "marginRight": 16,
+        "marginTop": 0,
+      },
+    ]
+  }
+>
+  <View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#c6c4c4",
+            "borderBottomWidth": 0.5,
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "space-around",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "flexBasis": 0,
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "marginLeft": 5,
+            },
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "#c6c4c4",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "textAlign": "left",
+              },
+            ]
+          }
+        >
+          Buy
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "flexBasis": 0,
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "marginLeft": 5,
+            },
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "#c6c4c4",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "textAlign": "left",
+              },
+            ]
+          }
+        >
+          Sell
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "justifyContent": "center",
+            "minHeight": 100,
+          },
+        ]
+      }
+    >
+      <ActivityIndicator
+        animating={true}
+        color="#999999"
+        hidesWhenStopped={true}
+        size="small"
+      />
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
 exports[`OrderBook renders successfully with empty orders 1`] = `
 <RCTScrollView
   style={
@@ -250,8 +363,7 @@ exports[`OrderBook renders successfully with orders 1`] = `
             ]
           }
         >
-          $
-          135
+          $ 135.0
         </Text>
       </View>
       <View
@@ -295,8 +407,7 @@ exports[`OrderBook renders successfully with orders 1`] = `
               ]
             }
           >
-            $
-            129
+            $ 129.0
           </Text>
         </View>
         <Text
@@ -384,8 +495,7 @@ exports[`OrderBook renders successfully with orders 1`] = `
             ]
           }
         >
-          $
-          228
+          $ 228.0
         </Text>
       </View>
       <View
@@ -429,8 +539,7 @@ exports[`OrderBook renders successfully with orders 1`] = `
               ]
             }
           >
-            $
-            133
+            $ 133.0
           </Text>
         </View>
         <Text
@@ -518,8 +627,7 @@ exports[`OrderBook renders successfully with orders 1`] = `
             ]
           }
         >
-          $
-          200
+          $ 200.0
         </Text>
       </View>
       <View
@@ -563,8 +671,7 @@ exports[`OrderBook renders successfully with orders 1`] = `
               ]
             }
           >
-            $
-            222
+            $ 222.0
           </Text>
         </View>
         <Text

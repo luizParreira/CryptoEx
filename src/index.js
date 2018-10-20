@@ -5,9 +5,10 @@ import getStore, {addListener} from './state';
 import Navigator from './view/navigation';
 
 const DEFAULT_ROUTE = '/trades';
+const store = getStore(DEFAULT_ROUTE, Navigator.router);
 
 export default () => (
-  <Provider store={getStore(DEFAULT_ROUTE, Navigator.router)}>
+  <Provider store={store}>
     <App addListener={addListener} />
   </Provider>
 );
