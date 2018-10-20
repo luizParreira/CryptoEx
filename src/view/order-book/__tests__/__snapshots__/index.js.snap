@@ -1,0 +1,589 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderBook renders successfully with empty orders 1`] = `
+<RCTScrollView
+  style={
+    Array [
+      Object {
+        "marginBottom": 0,
+        "marginLeft": 16,
+        "marginRight": 16,
+        "marginTop": 0,
+      },
+    ]
+  }
+>
+  <View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#c6c4c4",
+            "borderBottomWidth": 0.5,
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "space-around",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "flexBasis": 0,
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "marginLeft": 5,
+            },
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "#c6c4c4",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "textAlign": "left",
+              },
+            ]
+          }
+        >
+          Buy
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "flexBasis": 0,
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "marginLeft": 5,
+            },
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "#c6c4c4",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "textAlign": "left",
+              },
+            ]
+          }
+        >
+          Sell
+        </Text>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`OrderBook renders successfully with orders 1`] = `
+<RCTScrollView
+  style={
+    Array [
+      Object {
+        "marginBottom": 0,
+        "marginLeft": 16,
+        "marginRight": 16,
+        "marginTop": 0,
+      },
+    ]
+  }
+>
+  <View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "borderBottomColor": "#c6c4c4",
+            "borderBottomWidth": 0.5,
+            "flexDirection": "row",
+            "height": 60,
+            "justifyContent": "space-around",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "flexBasis": 0,
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "marginLeft": 5,
+            },
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "#c6c4c4",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "textAlign": "left",
+              },
+            ]
+          }
+        >
+          Buy
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "flexBasis": 0,
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "marginLeft": 5,
+            },
+          ]
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "#c6c4c4",
+                "fontSize": 18,
+                "fontWeight": "bold",
+                "textAlign": "left",
+              },
+            ]
+          }
+        >
+          Sell
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-around",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexBasis": 0,
+              "flexDirection": "row",
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "height": 44,
+              "justifyContent": "space-between",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "marginLeft": 5,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "black",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            6
+          </Text>
+        </View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          color="green"
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "green",
+                "fontSize": 18,
+              },
+            ]
+          }
+        >
+          $
+          135
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexBasis": 0,
+              "flexDirection": "row",
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "height": 44,
+              "justifyContent": "space-between",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "marginLeft": 5,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            color="red"
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "red",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            $
+            129
+          </Text>
+        </View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "black",
+                "fontSize": 18,
+              },
+            ]
+          }
+        >
+          5
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-around",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexBasis": 0,
+              "flexDirection": "row",
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "height": 44,
+              "justifyContent": "space-between",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "marginLeft": 5,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "black",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            9
+          </Text>
+        </View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          color="green"
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "green",
+                "fontSize": 18,
+              },
+            ]
+          }
+        >
+          $
+          228
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexBasis": 0,
+              "flexDirection": "row",
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "height": 44,
+              "justifyContent": "space-between",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "marginLeft": 5,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            color="red"
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "red",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            $
+            133
+          </Text>
+        </View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "black",
+                "fontSize": 18,
+              },
+            ]
+          }
+        >
+          16
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-around",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexBasis": 0,
+              "flexDirection": "row",
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "height": 44,
+              "justifyContent": "space-between",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "marginLeft": 5,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "black",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            10
+          </Text>
+        </View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          color="green"
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "green",
+                "fontSize": 18,
+              },
+            ]
+          }
+        >
+          $
+          200
+        </Text>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexBasis": 0,
+              "flexDirection": "row",
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "height": 44,
+              "justifyContent": "space-between",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "marginLeft": 5,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            color="red"
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "red",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            $
+            222
+          </Text>
+        </View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "color": "black",
+                "fontSize": 18,
+              },
+            ]
+          }
+        >
+          15
+        </Text>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
