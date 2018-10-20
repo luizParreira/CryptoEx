@@ -50,6 +50,16 @@
     "stylelint-processor-styled-components": "^1.5.0"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|react-navigation)/"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/__tests__/test.helpers.js"
+    ]
   }
 }
