@@ -7,7 +7,7 @@ import {
   createReduxBoundAddListener,
   createReactNavigationReduxMiddleware
 } from 'react-navigation-redux-helpers';
-import orders, {requestOrders} from './orders/reducer';
+import orders, {requestOrders, subscribe} from './orders/reducer';
 
 const navigationMiddleware = createReactNavigationReduxMiddleware(
   'root',
@@ -37,5 +37,6 @@ export default (initialScreen: string, router: NavigationRouter<any, any>) => {
 
   const store = createStore(reducer, enhancer);
   store.dispatch(requestOrders());
+  store.dispatch(subscribe());
   return store;
 };

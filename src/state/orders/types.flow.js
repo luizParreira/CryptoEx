@@ -12,7 +12,17 @@ export type Order<Type> = {|
   type: Type
 |};
 
-export type Orders = Array<Order<OrderType>>;
+export type Trade = {
+  price: number,
+  time: number,
+  buyOrder: Order<OrderType>,
+  sellOrder: Order<OrderType>,
+  quantity: number
+};
+
+export type Trades = Array<Trade>;
+
+export type Orders<Type: OrderType> = Array<Order<Type>>;
 
 export type OrderBookOrders = [Array<Order<Buy>>, Array<Order<Sell>>];
 
@@ -23,5 +33,7 @@ export type RemoteData<Data, Error> = {|
 |};
 
 export type State = {|
-  orders: RemoteData<Orders, string>
+  orders: RemoteData<Orders<OrderType>, string>,
+  trades: ?Trades,
+  latestOrder: ?Order<OrderType>
 |};
