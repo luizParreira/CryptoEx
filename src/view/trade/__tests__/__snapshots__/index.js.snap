@@ -1,0 +1,612 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Trades renders successfully with trade 1`] = `
+<RCTScrollView>
+  <View>
+    <View
+      style={
+        Array [
+          Object {
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "justifyContent": "flex-start",
+            "marginBottom": 16,
+            "marginLeft": 16,
+            "marginRight": 16,
+            "marginTop": 16,
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "fontSize": 20,
+              "fontWeight": "bold",
+              "marginBottom": 8,
+              "textAlign": "center",
+            },
+          ]
+        }
+        textAlign="center"
+      >
+        Trade info
+      </Text>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "borderBottomColor": "#c6c4c4",
+              "borderBottomWidth": 0.5,
+              "flexDirection": "row",
+              "height": 60,
+              "justifyContent": "space-between",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                  "marginBottom": 8,
+                  "textAlign": "left",
+                },
+              ]
+            }
+            textAlign="left"
+          >
+            Time
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                  "marginBottom": 8,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+          >
+            Price
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                  "marginBottom": 8,
+                  "textAlign": "right",
+                },
+              ]
+            }
+            textAlign="right"
+          >
+            Amount
+          </Text>
+        </View>
+      </View>
+      <View
+        height="44"
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "borderBottomColor": "#c6c4c4",
+              "borderBottomWidth": 0.5,
+              "flexDirection": "row",
+              "height": 44,
+              "justifyContent": "space-between",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "black",
+                  "fontSize": 18,
+                  "textAlign": "left",
+                },
+              ]
+            }
+            textAlign="left"
+          >
+             
+            2:22:10 pm
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "black",
+                  "fontSize": 18,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+          >
+             
+            $ 10.0
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "black",
+                  "fontSize": 18,
+                  "textAlign": "right",
+                },
+              ]
+            }
+            textAlign="right"
+          >
+             
+            2
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "justifyContent": "flex-start",
+            "marginBottom": 16,
+            "marginLeft": 16,
+            "marginRight": 16,
+            "marginTop": 16,
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "fontSize": 20,
+              "fontWeight": "bold",
+              "marginBottom": 8,
+              "textAlign": "center",
+            },
+          ]
+        }
+        textAlign="center"
+      >
+        Orders info
+      </Text>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "borderBottomColor": "#c6c4c4",
+              "borderBottomWidth": 0.5,
+              "flexDirection": "row",
+              "height": 60,
+              "justifyContent": "space-between",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                  "marginBottom": 8,
+                  "textAlign": "left",
+                },
+              ]
+            }
+            textAlign="left"
+          >
+            Type
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                  "marginBottom": 8,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+          >
+            Price
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                  "marginBottom": 8,
+                  "textAlign": "right",
+                },
+              ]
+            }
+            textAlign="right"
+          >
+            Amount
+          </Text>
+        </View>
+      </View>
+      <View
+        height="44"
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "borderBottomColor": "#c6c4c4",
+              "borderBottomWidth": 0.5,
+              "flexDirection": "row",
+              "height": 44,
+              "justifyContent": "space-between",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            color="#56b53f"
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "#56b53f",
+                  "fontSize": 18,
+                  "textAlign": "left",
+                },
+              ]
+            }
+            textAlign="left"
+          >
+             
+            buy
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            color="#56b53f"
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "#56b53f",
+                  "fontSize": 18,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+          >
+             
+            $ 228.0
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            color="#56b53f"
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "#56b53f",
+                  "fontSize": 18,
+                  "textAlign": "right",
+                },
+              ]
+            }
+            textAlign="right"
+          >
+             
+            9
+          </Text>
+        </View>
+      </View>
+      <View
+        height="44"
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "borderBottomColor": "#c6c4c4",
+              "borderBottomWidth": 0.5,
+              "flexDirection": "row",
+              "height": 44,
+              "justifyContent": "space-between",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            color="#dd676b"
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "#dd676b",
+                  "fontSize": 18,
+                  "textAlign": "left",
+                },
+              ]
+            }
+            textAlign="left"
+          >
+             
+            sell
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            color="#dd676b"
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "#dd676b",
+                  "fontSize": 18,
+                  "textAlign": "center",
+                },
+              ]
+            }
+            textAlign="center"
+          >
+             
+            $ 129.0
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "flexBasis": 0,
+                "flexGrow": 1,
+                "flexShrink": 1,
+              },
+            ]
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            color="#dd676b"
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "#dd676b",
+                  "fontSize": 18,
+                  "textAlign": "right",
+                },
+              ]
+            }
+            textAlign="right"
+          >
+             
+            5
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
