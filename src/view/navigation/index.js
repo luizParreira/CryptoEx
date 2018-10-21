@@ -1,14 +1,8 @@
-import React from 'react';
 import {createMaterialTopTabNavigator, createStackNavigator} from 'react-navigation';
-import {Text, View} from 'react-native';
 import SmartOrderBook from '../order-book';
+import SmartMarketTrades from '../market-trades';
+import Trade from '../trade';
 import {silver} from '../theme/colors';
-
-const MarketTrades = () => (
-  <View>
-    <Text>Market Trades</Text>
-  </View>
-);
 
 const TradesTopTabNavigator = createMaterialTopTabNavigator(
   {
@@ -19,7 +13,7 @@ const TradesTopTabNavigator = createMaterialTopTabNavigator(
       }
     },
     MarketTradesScreen: {
-      screen: MarketTrades,
+      screen: SmartMarketTrades,
       navigationOptions: {
         title: 'Market Trades'
       }
@@ -50,30 +44,19 @@ const TradesTopTabNavigator = createMaterialTopTabNavigator(
 
 export default createStackNavigator(
   {
-    TradesScreen: {
+    MarketScreen: {
       screen: TradesTopTabNavigator,
-      path: '/trades',
+      path: '/market',
       navigationOptions: {
-        title: 'Trades',
-        headerTitleStyle: {
-          color: 'white',
-          fontSize: 18,
-          fontWeight: '500',
-          alignSelf: 'center',
-          textAlign: 'center',
-          flex: 1,
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginHorizontal: 0
-        },
-        headerStyle: {
-          shadowColor: 'black',
-          borderBottomWidth: 0,
-          backgroundColor: 'black',
-          height: 67,
-          flex: 1,
-          alignItems: 'stretch'
-        }
+        headerTintColor: 'white',
+        title: 'BTC / USD'
+      }
+    },
+    TradeScreen: {
+      screen: Trade,
+      navigationOptions: {
+        headerTintColor: 'white',
+        title: 'Trade'
       }
     }
   },
@@ -82,13 +65,27 @@ export default createStackNavigator(
     cardStyle: {
       backgroundColor: 'white'
     },
-    /**
-     * Applying a View component for the headerRight option.
-     * This is needed because the header title isn't well centered
-     * See: https://github.com/react-navigation/react-navigation/issues/544#issuecomment-298618209
-     */
+    headerLayoutPreset: 'center',
     navigationOptions: {
-      headerRight: <View />
+      headerTitleStyle: {
+        color: 'white',
+        fontSize: 18,
+        fontWeight: '500',
+        alignSelf: 'center',
+        textAlign: 'center',
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginHorizontal: 0
+      },
+      headerStyle: {
+        shadowColor: 'black',
+        borderBottomWidth: 0,
+        backgroundColor: 'black',
+        height: 67,
+        flex: 1,
+        alignItems: 'stretch'
+      }
     }
   }
 );

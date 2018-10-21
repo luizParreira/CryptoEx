@@ -4,7 +4,7 @@ import {Provider} from 'react-redux';
 import getStore, {addListener} from './state';
 import Navigator from './view/navigation';
 
-const DEFAULT_ROUTE = '/trades';
+const DEFAULT_ROUTE = '/market';
 const store = getStore(DEFAULT_ROUTE, Navigator.router);
 
 export default () => (
