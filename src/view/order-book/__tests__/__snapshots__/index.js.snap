@@ -357,12 +357,12 @@ exports[`OrderBook renders successfully with orders 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            color="green"
+            color="#56b53f"
             ellipsizeMode="tail"
             style={
               Array [
                 Object {
-                  "color": "green",
+                  "color": "#56b53f",
                   "fontSize": 18,
                 },
               ]
@@ -401,12 +401,12 @@ exports[`OrderBook renders successfully with orders 1`] = `
             <Text
               accessible={true}
               allowFontScaling={true}
-              color="red"
+              color="#dd676b"
               ellipsizeMode="tail"
               style={
                 Array [
                   Object {
-                    "color": "red",
+                    "color": "#dd676b",
                     "fontSize": 18,
                   },
                 ]
@@ -489,12 +489,12 @@ exports[`OrderBook renders successfully with orders 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            color="green"
+            color="#56b53f"
             ellipsizeMode="tail"
             style={
               Array [
                 Object {
-                  "color": "green",
+                  "color": "#56b53f",
                   "fontSize": 18,
                 },
               ]
@@ -533,12 +533,12 @@ exports[`OrderBook renders successfully with orders 1`] = `
             <Text
               accessible={true}
               allowFontScaling={true}
-              color="red"
+              color="#dd676b"
               ellipsizeMode="tail"
               style={
                 Array [
                   Object {
-                    "color": "red",
+                    "color": "#dd676b",
                     "fontSize": 18,
                   },
                 ]
@@ -621,12 +621,12 @@ exports[`OrderBook renders successfully with orders 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            color="green"
+            color="#56b53f"
             ellipsizeMode="tail"
             style={
               Array [
                 Object {
-                  "color": "green",
+                  "color": "#56b53f",
                   "fontSize": 18,
                 },
               ]
@@ -665,12 +665,12 @@ exports[`OrderBook renders successfully with orders 1`] = `
             <Text
               accessible={true}
               allowFontScaling={true}
-              color="red"
+              color="#dd676b"
               ellipsizeMode="tail"
               style={
                 Array [
                   Object {
-                    "color": "red",
+                    "color": "#dd676b",
                     "fontSize": 18,
                   },
                 ]
