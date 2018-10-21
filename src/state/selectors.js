@@ -5,7 +5,7 @@ import * as ordersSelectors from './orders/selectors';
 const createSelectors = (rootSelector, selectorMap) =>
   mapValues(selectorMap, selector => createSelector(rootSelector, selector));
 
-export const {orderBookOrders: orders, isOrdersLoading} = createSelectors(
+export const {orderBookOrders: orders, isOrdersLoading, formattedTrades} = createSelectors(
   state => state.orders,
   ordersSelectors
 );

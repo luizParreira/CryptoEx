@@ -29,8 +29,8 @@ export const subscribe = createAction(SUBSCRIBE, () => null);
 export const matchOrdersAction = createAction(MATCH_ORDERS, () => null);
 
 // Commands
-const ORDER_FETCH_INTERVAL = 300000;
-const ORDER_MATCH_INTERVAL = 5000;
+const ORDER_FETCH_INTERVAL = 30000;
+const ORDER_MATCH_INTERVAL = 1000;
 
 const continueFetching = dispatch =>
   setInterval(() => dispatch(requestOrders()), ORDER_FETCH_INTERVAL);
