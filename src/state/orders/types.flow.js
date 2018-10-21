@@ -17,7 +17,10 @@ export type Trade = {
   time: number,
   buyOrder: Order<OrderType>,
   sellOrder: Order<OrderType>,
-  quantity: number
+  quantity: number,
+  formattedPrice?: string,
+  formattedTime?: string,
+  color?: string
 };
 
 export type Trades = Array<Trade>;

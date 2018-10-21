@@ -1,10 +1,14 @@
 // @flow
 
 import {zip, orderBy, slice, flow, filter} from 'lodash/fp';
-import type {State, OrderBookOrders, Orders, Order, OrderType, Trades} from './types.flow';
+import type {State, OrderBookOrders, Orders, Order, OrderType, Trades, Trade} from './types.flow';
 import numeral from 'numeral';
+import {createSelector} from 'reselect';
+import moment from 'moment';
+import {green, red} from '../../view/theme/colors';
 
 const ORDER_BOOK_LIMIT = 20;
+const MARKET_TRADES_LIMIT = 30;
 
 const formatPrice = (price: number) => numeral(price).format('$ 0.0');
 const formatPrices = (orders: Orders<OrderType>): Orders<OrderType> =>
@@ -58,3 +62,31 @@ export const maxOrderId = (state: State): number => {
 export const orders = (state: State): Orders<OrderType> => state.orders.data || [];
 export const trades = (state: State): Trades => state.trades || [];
 export const latestOrder = (state: State): ?Order<OrderType> => state.latestOrder;
+
+export const formattedTrades = createSelector(
+  trades,
+  (trades: Trades): Trades => {
+    const formattedTrades = trades.map(
+      (trade: Trade, index: number): Trade => {
+        const previousTrade = trades[index + 1];
+        const color = previousTrade && previousTrade.price > trade.price ? red : green;
+        return {
+          ...trade,
+          sellOrder: {
+            ...trade.sellOrder,
+            formattedPrice: formatPrice(trade.sellOrder.price)
+          },
+          buyOrder: {
+            ...trade.buyOrder,
+            formattedPrice: formatPrice(trade.buyOrder.price)
+          },
+          formattedPrice: formatPrice(trade.price),
+          formattedTime: moment(trade.time).format('h:mm:ss a'),
+          color
+        };
+      }
+    );
+
+    return slice(0, MARKET_TRADES_LIMIT, formattedTrades);
+  }
+);

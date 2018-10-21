@@ -1,5 +1,5 @@
 import type {State, Orders, Buy, Sell, Trades} from './types.flow';
-import {orderBy, remove, forEach} from 'lodash/fp';
+import {orderBy, remove, forEach, slice} from 'lodash/fp';
 import {loop, Cmd} from 'redux-loop';
 import * as select from './selectors';
 
@@ -41,6 +41,9 @@ const matchOrders = (buyOrders: Orders<Buy>, sellOrders: Orders<Sell>, allTrades
     }, buys);
   }, sells);
 
+  // Make sure trades is as big as 50
+  const orderedTrades = orderBy(['time'], ['desc'], trades);
+  trades = slice(0, 50, orderedTrades);
   const orders = [...buys, ...sells];
   return {trades, orders};
 };

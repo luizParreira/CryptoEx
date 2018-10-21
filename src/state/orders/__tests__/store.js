@@ -188,6 +188,28 @@ describe('matching orders', () => {
         time: now
       }
     ]);
+    expect(select.formattedTrades(nextState)).toEqual([
+      {
+        price: 465,
+        quantity: 8,
+        buyOrder: {...order(1002, 'buy', 8, 470), formattedPrice: '$ 470.0'},
+        sellOrder: {...order(1004, 'sell', 10, 460), formattedPrice: '$ 460.0'},
+        time: now,
+        formattedPrice: '$ 465.0',
+        formattedTime: '4:56:47 am',
+        color: '#56b53f'
+      },
+      {
+        price: 460,
+        quantity: 2,
+        buyOrder: {...order(1003, 'buy', 5, 460), formattedPrice: '$ 460.0'},
+        sellOrder: {...order(1004, 'sell', 2, 460), formattedPrice: '$ 460.0'},
+        time: now,
+        formattedPrice: '$ 460.0',
+        formattedTime: '4:56:47 am',
+        color: '#56b53f'
+      }
+    ]);
     expect(select.error(nextState)).toBeNull();
     expect(select.isOrdersLoading(nextState)).toBe(false);
     expect(select.latestOrder(nextState)).toEqual(order(1004, 'sell', 2, 460));
