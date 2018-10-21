@@ -5,45 +5,21 @@ import {ActivityIndicator, ScrollView} from 'react-native';
 import PropTypes from 'prop-types';
 import styled from 'styled-components/native';
 import type {OrderBookOrders} from '../../state/orders/types.flow';
-import {silver} from '../theme/colors';
 import container from './container';
-
-const HeaderContainer = styled.View`
-  height: 60px;
-  border-bottom-width: 0.5px;
-  border-bottom-color: ${silver};
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-`;
-
-const HeaderTitle = styled.Text`
-  font-size: 18px;
-  color: ${silver};
-  text-align: left;
-  font-weight: bold;
-`;
+import {HeaderContainer, Container, HeaderTitle, Text} from '../styled';
+import {green, red} from '../theme/colors';
 
 const TextContainer = styled.View`
   flex: 1;
   margin-left: 5px;
 `;
 
-const OrdersBookContainer = styled.View`
-  margin: 0 16px;
-`;
-
-const BuyOrderBackground = styled.View`
+const OrderBackground = styled.View`
   height: 44px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   flex: 1;
-`;
-
-const CellText = styled.Text`
-  color: ${({color}) => color || 'black'};
-  font-size: 18px;
 `;
 
 const CellContainer = styled.View`
@@ -69,26 +45,26 @@ type Props = {
 };
 
 const BuyOrderCell = ({quantity, price}: CellProps) => (
-  <BuyOrderBackground>
+  <OrderBackground>
     <TextContainer>
-      <CellText>{quantity}</CellText>
+      <Text>{quantity}</Text>
     </TextContainer>
-    <CellText color="green">{price}</CellText>
-  </BuyOrderBackground>
+    <Text color={green}>{price}</Text>
+  </OrderBackground>
 );
 
 const SellOrderCell = ({quantity, price}: CellProps) => (
-  <BuyOrderBackground>
+  <OrderBackground>
     <TextContainer>
-      <CellText color="red">{price}</CellText>
+      <Text color={red}>{price}</Text>
     </TextContainer>
-    <CellText>{quantity}</CellText>
-  </BuyOrderBackground>
+    <Text>{quantity}</Text>
+  </OrderBackground>
 );
 
 export const OrderBook = ({orders, isOrdersLoading}: Props) => (
   <ScrollView>
-    <OrdersBookContainer>
+    <Container>
       <HeaderContainer>
         <TextContainer>
           <HeaderTitle>Buy</HeaderTitle>
@@ -109,9 +85,16 @@ export const OrderBook = ({orders, isOrdersLoading}: Props) => (
           </CellContainer>
         ))
       )}
-    </OrdersBookContainer>
+    </Container>
   </ScrollView>
 );
+
+export const orderPropType = PropTypes.shape({
+  id: PropTypes.number,
+  price: PropTypes.number,
+  amount: PropTypes.number,
+  type: PropTypes.oneOf(['buy', 'sell'])
+});
 
 const cellPropTypes = {
   quantity: PropTypes.number,
@@ -130,7 +113,7 @@ BuyOrderCell.defaultProps = cellDefaultPropTypes;
 SellOrderCell.defaultProps = cellDefaultPropTypes;
 
 OrderBook.propTypes = {
-  orders: PropTypes.array,
+  orders: PropTypes.arrayOf(PropTypes.arrayOf(orderPropType)),
   isOrdersLoading: PropTypes.bool.isRequired
 };
 
