@@ -8,6 +8,7 @@ import type {OrderBookOrders} from '../../state/orders/types.flow';
 import container from './container';
 import {HeaderContainer, Container, HeaderTitle, Text} from '../styled';
 import {green, red} from '../theme/colors';
+import {generateKey} from '../helpers';
 
 const TextContainer = styled.View`
   flex: 1;
@@ -79,7 +80,7 @@ export const OrderBook = ({orders, isOrdersLoading}: Props) => (
         </LoadingContainer>
       ) : (
         (orders || []).map(([buy, sell]) => (
-          <CellContainer key={`${buy && buy.id}${sell && sell.id}`}>
+          <CellContainer key={generateKey()}>
             <BuyOrderCell quantity={buy && buy.quantity} price={buy && buy.formattedPrice} />
             <SellOrderCell quantity={sell && sell.quantity} price={sell && sell.formattedPrice} />
           </CellContainer>
