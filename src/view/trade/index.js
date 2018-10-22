@@ -49,8 +49,8 @@ const TradeSection = ({title, headers, values, textAlignments, textColors}: Trad
     {zip(values, textColors).map(([innerValues, color]) => (
       <MarketTradesContainer key={generateKey()} height="44">
         {zip(innerValues, textAlignments).map(([value, textAlign]) => (
-          <TextContainer key={value}>
-            <Text textAlign={generateKey()} color={color}>
+          <TextContainer key={generateKey()}>
+            <Text textAlign={textAlign} color={color}>
               {' '}
               {value}
             </Text>
