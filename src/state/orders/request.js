@@ -6,20 +6,25 @@ const headers = {
 };
 
 const request = async (url: string) => {
-  const response = await global.fetch(url, {
-    headers,
-    method: 'GET'
-  });
+  try {
+    const response = await global.fetch(url, {
+      headers,
+      method: 'GET'
+    });
 
-  return {
-    ok: response.ok,
-    status: response.status,
-    data: await response.json()
-  };
+    return {
+      ok: response.ok,
+      status: response.status,
+      data: await response.json()
+    };
+  } catch (error) {
+    return {ok: false, status: 400, error: 'networkError'};
+  }
 };
 
-export const ordersRequest = (url, success) =>
+export const ordersRequest = (url, success, failure) =>
   Cmd.run(request, {
     args: [url],
-    successActionCreator: success
+    successActionCreator: success,
+    failActionCreator: failure
   });

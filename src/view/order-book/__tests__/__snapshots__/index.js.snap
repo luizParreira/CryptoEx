@@ -94,21 +94,397 @@ exports[`OrderBook renders successfully when loading 1`] = `
         style={
           Array [
             Object {
-              "flexBasis": 0,
-              "flexGrow": 1,
-              "flexShrink": 1,
-              "justifyContent": "center",
-              "minHeight": 100,
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "space-around",
             },
           ]
         }
       >
-        <ActivityIndicator
-          animating={true}
-          color="#999999"
-          hidesWhenStopped={true}
-          size="small"
-        />
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "flexBasis": 0,
+                "flexDirection": "row",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "height": 44,
+                "justifyContent": "space-between",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "flexBasis": 0,
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "marginLeft": 5,
+                },
+              ]
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "black",
+                    "fontSize": 18,
+                  },
+                ]
+              }
+            >
+              6
+            </Text>
+          </View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            color="#56b53f"
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "#56b53f",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            $ 135.0
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "flexBasis": 0,
+                "flexDirection": "row",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "height": 44,
+                "justifyContent": "space-between",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "flexBasis": 0,
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "marginLeft": 5,
+                },
+              ]
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              color="#dd676b"
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#dd676b",
+                    "fontSize": 18,
+                  },
+                ]
+              }
+            >
+              $ 129.0
+            </Text>
+          </View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "black",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            5
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "space-around",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "flexBasis": 0,
+                "flexDirection": "row",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "height": 44,
+                "justifyContent": "space-between",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "flexBasis": 0,
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "marginLeft": 5,
+                },
+              ]
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "black",
+                    "fontSize": 18,
+                  },
+                ]
+              }
+            >
+              9
+            </Text>
+          </View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            color="#56b53f"
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "#56b53f",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            $ 228.0
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "flexBasis": 0,
+                "flexDirection": "row",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "height": 44,
+                "justifyContent": "space-between",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "flexBasis": 0,
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "marginLeft": 5,
+                },
+              ]
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              color="#dd676b"
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#dd676b",
+                    "fontSize": 18,
+                  },
+                ]
+              }
+            >
+              $ 133.0
+            </Text>
+          </View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "black",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            16
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "space-around",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "flexBasis": 0,
+                "flexDirection": "row",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "height": 44,
+                "justifyContent": "space-between",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "flexBasis": 0,
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "marginLeft": 5,
+                },
+              ]
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "black",
+                    "fontSize": 18,
+                  },
+                ]
+              }
+            >
+              10
+            </Text>
+          </View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            color="#56b53f"
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "#56b53f",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            $ 200.0
+          </Text>
+        </View>
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "flexBasis": 0,
+                "flexDirection": "row",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "height": 44,
+                "justifyContent": "space-between",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "flexBasis": 0,
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "marginLeft": 5,
+                },
+              ]
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              color="#dd676b"
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "#dd676b",
+                    "fontSize": 18,
+                  },
+                ]
+              }
+            >
+              $ 222.0
+            </Text>
+          </View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "black",
+                  "fontSize": 18,
+                },
+              ]
+            }
+          >
+            15
+          </Text>
+        </View>
       </View>
     </View>
   </View>

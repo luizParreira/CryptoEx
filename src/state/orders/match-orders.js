@@ -50,6 +50,11 @@ const matchOrders = (buyOrders: Orders<Buy>, sellOrders: Orders<Sell>, allTrades
 
 export default (state: State) => {
   const orders = select.orders(state);
+
+  if (orders.length === 0) {
+    return loop(state, Cmd.none);
+  }
+
   const trades = select.trades(state);
 
   const buy = orders.filter(({type}) => type === 'buy');

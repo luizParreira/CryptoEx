@@ -16,7 +16,7 @@ export const Container = styled.View`
 
 export const HeaderTitle = styled.Text`
   font-size: 18px;
-  color: ${silver};
+  color: ${({color}) => color || silver};
   text-align: ${({textAlign}) => textAlign || 'left'};
   font-weight: bold;
 `;

@@ -1,6 +1,11 @@
 import {getModel, getCmd, Cmd} from 'redux-loop';
 import * as select from '../selectors';
-import reducer, {requestOrders, responseOders, matchOrdersAction} from '../reducer';
+import reducer, {
+  requestOrders,
+  responseOders,
+  matchOrdersAction,
+  failNetworkingRequest
+} from '../reducer';
 import {ordersRequest} from '../request';
 import {apiHost} from '../constants';
 
@@ -34,8 +39,12 @@ describe('orders', () => {
 
     expect(select.isOrdersLoading(state)).toBe(true);
     expect(select.orderBookOrders(state)).toBeNull();
+    expect(select.hasData(state)).toBe(false);
+    expect(select.error(state)).toBe(false);
 
-    expect(cmd).toEqual(ordersRequest(apiHost({start: 1, size: 60}), responseOders));
+    expect(cmd).toEqual(
+      ordersRequest(apiHost({start: 1, size: 60}), responseOders, failNetworkingRequest)
+    );
   });
 
   test('response with success', () => {
@@ -64,6 +73,8 @@ describe('orders', () => {
         {id: 549, type: 'sell', quantity: 16, price: 133, formattedPrice: '$ 133.0'}
       ]
     ]);
+    expect(select.hasData(state)).toBe(true);
+    expect(select.error(state)).toBe(false);
 
     expect(cmd).toEqual(Cmd.none);
   });
@@ -74,7 +85,7 @@ describe('orders', () => {
 
     const responseData = {
       ok: false,
-      status: 500
+      status: 404
     };
 
     const responseState = reducer(requestState, responseOders(responseData));
@@ -84,7 +95,49 @@ describe('orders', () => {
 
     expect(select.isOrdersLoading(state)).toBe(false);
     expect(select.orderBookOrders(state)).toBeNull();
-    expect(select.error(state)).toBe('ListOrdersRequestError');
+    expect(select.hasData(state)).toBe(false);
+    expect(select.error(state)).toBe(true);
+
+    expect(cmd).toEqual(Cmd.none);
+  });
+
+  test('response failure when already has data', () => {
+    const initialState = getModel(reducer(undefined, {type: 'INIT'}));
+    const requestState = getModel(reducer(initialState, requestOrders()));
+
+    const successResponseData = {
+      ok: true,
+      status: 200,
+      data
+    };
+
+    const successResponseState = getModel(
+      reducer(requestState, responseOders(successResponseData))
+    );
+
+    const responseData = {
+      ok: false,
+      status: 404
+    };
+
+    const responseState = reducer(successResponseState, responseOders(responseData));
+
+    const state = getModel(responseState);
+    const cmd = getCmd(responseState);
+
+    expect(select.isOrdersLoading(state)).toBe(false);
+    expect(select.orderBookOrders(state)).toEqual([
+      [
+        {id: 546, type: 'buy', quantity: 9, price: 228, formattedPrice: '$ 228.0'},
+        {id: 547, type: 'sell', quantity: 5, price: 129, formattedPrice: '$ 129.0'}
+      ],
+      [
+        {id: 548, type: 'buy', quantity: 10, price: 200, formattedPrice: '$ 200.0'},
+        {id: 549, type: 'sell', quantity: 16, price: 133, formattedPrice: '$ 133.0'}
+      ]
+    ]);
+    expect(select.hasData(state)).toBe(true);
+    expect(select.error(state)).toBe(false);
 
     expect(cmd).toEqual(Cmd.none);
   });
@@ -137,7 +190,7 @@ describe('matching orders', () => {
       order(1001, 'sell', 6, 480)
     ]);
     expect(select.trades(state)).toEqual([]);
-    expect(select.error(state)).toBeNull();
+    expect(select.error(state)).toBe(false);
     expect(select.isOrdersLoading(state)).toBe(false);
     expect(select.latestOrder(state)).toEqual(order(1003, 'buy', 5, 460));
     expect(cmd).toEqual(Cmd.none);
@@ -162,7 +215,7 @@ describe('matching orders', () => {
         time: now
       }
     ]);
-    expect(select.error(nextOrdersState.state)).toBeNull();
+    expect(select.error(nextOrdersState.state)).toBe(false);
     expect(select.isOrdersLoading(nextOrdersState.state)).toBe(false);
     expect(select.latestOrder(nextOrdersState.state)).toEqual(order(1004, 'sell', 10, 460));
     expect(nextOrdersState.cmd).toEqual(Cmd.none);
@@ -210,7 +263,7 @@ describe('matching orders', () => {
         color: '#56b53f'
       }
     ]);
-    expect(select.error(nextState)).toBeNull();
+    expect(select.error(nextState)).toBe(false);
     expect(select.isOrdersLoading(nextState)).toBe(false);
     expect(select.latestOrder(nextState)).toEqual(order(1004, 'sell', 2, 460));
     expect(nextCmd).toEqual(Cmd.none);

@@ -16,17 +16,21 @@ const ORDERS = {
 const SUBSCRIBE = 'orders/SUBSCRIBE';
 const MATCH_ORDERS = 'orders/MATCH_ORDERS';
 
+const FAIL_NETWORKING_REQUEST = 'networking/FAIL_NETWORKING_REQUEST';
+
 // Actions
 export const requestOrders = createAction(ORDERS.REQUEST, () => null);
-export const responseOders = createAction(ORDERS.RESPONSE, ({ok, data}) => {
+export const responseOders = createAction(ORDERS.RESPONSE, ({ok, data, error}) => {
   if (ok) {
     return data;
   }
-  return new Error('ListOrdersRequestError');
+  return new Error(error || 'ListOrdersRequestError');
 });
 
 export const subscribe = createAction(SUBSCRIBE, () => null);
 export const matchOrdersAction = createAction(MATCH_ORDERS, () => null);
+
+export const failNetworkingRequest = createAction(FAIL_NETWORKING_REQUEST);
 
 // Commands
 const ORDER_FETCH_INTERVAL = 30000;
@@ -60,15 +64,27 @@ const initialState: State = {
 
 const FETCH_SIZE = 60;
 
+const errorState = (state: State, error: string): State =>
+  flow(
+    set('orders.loading', false),
+    set('orders.data', error !== 'networkError' && state.orders.data),
+    set('trades', error !== 'networkError' && state.data),
+    set('orders.error', error)
+  )(state);
+
 export default handleActions(
   {
+    [FAIL_NETWORKING_REQUEST]: (state: State) => loop(errorState(state, 'APIFailure'), Cmd.none),
     [MATCH_ORDERS]: matchOrders,
     [SUBSCRIBE]: (state: State) => loop(state, executeSubscription),
     [ORDERS.REQUEST]: (state: State) => {
       const params = {start: select.maxOrderId(state), size: FETCH_SIZE};
       return loop(
-        set('orders.loading', !state.orders.data && true, state),
-        ordersRequest(apiHost(params), responseOders)
+        flow(
+          set('orders.error', null),
+          set('orders.loading', !state.orders.data && true)
+        )(state),
+        ordersRequest(apiHost(params), responseOders, failNetworkingRequest)
       );
     },
     [ORDERS.RESPONSE]: {
@@ -86,14 +102,7 @@ export default handleActions(
         return loop(newState, Cmd.none);
       },
       throw: (state: State, {payload}: {payload: {message: string}}) =>
-        loop(
-          flow(
-            set('orders.loading', false),
-            set('orders.data', null),
-            set('orders.error', payload.message)
-          )(state),
-          Cmd.none
-        )
+        loop(errorState(state, payload.message), Cmd.none)
     }
   },
   initialState
