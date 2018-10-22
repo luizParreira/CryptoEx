@@ -1,14 +1,15 @@
 // @flow
 
 import React from 'react';
-import {ActivityIndicator, ScrollView} from 'react-native';
+import {ScrollView} from 'react-native';
 import PropTypes from 'prop-types';
 import styled from 'styled-components/native';
 import type {OrderBookOrders} from '../../state/orders/types.flow';
-import container from './container';
+import container, {OrderBookRemoteData} from './container';
 import {HeaderContainer, Container, HeaderTitle, Text} from '../styled';
 import {green, red} from '../theme/colors';
 import {generateKey} from '../helpers';
+import ErrorComponent from './error';
 
 const TextContainer = styled.View`
   flex: 1;
@@ -29,20 +30,13 @@ const CellContainer = styled.View`
   justify-content: space-around;
 `;
 
-const LoadingContainer = styled.View`
-  flex: 1;
-  justify-content: center;
-  min-height: 100px;
-`;
-
 type CellProps = {
   quantity?: number,
   price?: string
 };
 
 type Props = {
-  orders?: OrderBookOrders,
-  isOrdersLoading: boolean
+  orders?: OrderBookOrders
 };
 
 const BuyOrderCell = ({quantity, price}: CellProps) => (
@@ -63,7 +57,7 @@ const SellOrderCell = ({quantity, price}: CellProps) => (
   </OrderBackground>
 );
 
-export const OrderBook = ({orders, isOrdersLoading}: Props) => (
+export const OrderBook = ({orders}: Props) => (
   <ScrollView>
     <Container>
       <HeaderContainer>
@@ -74,18 +68,12 @@ export const OrderBook = ({orders, isOrdersLoading}: Props) => (
           <HeaderTitle>Sell</HeaderTitle>
         </TextContainer>
       </HeaderContainer>
-      {isOrdersLoading ? (
-        <LoadingContainer>
-          <ActivityIndicator />
-        </LoadingContainer>
-      ) : (
-        (orders || []).map(([buy, sell]) => (
-          <CellContainer key={generateKey()}>
-            <BuyOrderCell quantity={buy && buy.quantity} price={buy && buy.formattedPrice} />
-            <SellOrderCell quantity={sell && sell.quantity} price={sell && sell.formattedPrice} />
-          </CellContainer>
-        ))
-      )}
+      {(orders || []).map(([buy, sell]) => (
+        <CellContainer key={generateKey()}>
+          <BuyOrderCell quantity={buy && buy.quantity} price={buy && buy.formattedPrice} />
+          <SellOrderCell quantity={sell && sell.quantity} price={sell && sell.formattedPrice} />
+        </CellContainer>
+      ))}
     </Container>
   </ScrollView>
 );
@@ -114,12 +102,13 @@ BuyOrderCell.defaultProps = cellDefaultPropTypes;
 SellOrderCell.defaultProps = cellDefaultPropTypes;
 
 OrderBook.propTypes = {
-  orders: PropTypes.arrayOf(PropTypes.arrayOf(orderPropType)),
-  isOrdersLoading: PropTypes.bool.isRequired
+  orders: PropTypes.arrayOf(PropTypes.arrayOf(orderPropType))
 };
 
 OrderBook.defaultProps = {
   orders: null
 };
 
-export default container(OrderBook);
+const SuccessOrderBook = container(OrderBook);
+
+export default () => <OrderBookRemoteData Success={SuccessOrderBook} Failure={ErrorComponent} />;

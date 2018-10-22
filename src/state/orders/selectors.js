@@ -48,9 +48,10 @@ export const orderBookOrders = (state: State): ?OrderBookOrders => {
   return zip(buy, sell);
 };
 
+export const hasData = (state: State): boolean => Boolean(state.orders.data);
 export const isOrdersLoading = (state: State): boolean => state.orders.loading;
 
-export const error = (state: State): ?string => state.orders.error;
+export const error = (state: State): boolean => !state.orders.data && Boolean(state.orders.error);
 
 export const maxOrderId = (state: State): number => {
   if (state.latestOrder) {
