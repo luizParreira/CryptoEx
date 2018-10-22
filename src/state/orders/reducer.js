@@ -3,7 +3,7 @@ import {createAction, handleActions} from 'redux-actions';
 import type {State, RemoteData, Orders, OrderType} from './types.flow';
 import {loop, Cmd} from 'redux-loop';
 import {ordersRequest} from './request';
-import {apiHost} from './constants';
+import {listOrdersURL, ORDER_FETCH_INTERVAL, ORDER_MATCH_INTERVAL, FETCH_SIZE} from './constants';
 import matchOrders from './match-orders';
 import * as select from './selectors';
 
@@ -33,9 +33,6 @@ export const matchOrdersAction = createAction(MATCH_ORDERS, () => null);
 export const failNetworkingRequest = createAction(FAIL_NETWORKING_REQUEST);
 
 // Commands
-const ORDER_FETCH_INTERVAL = 30000;
-const ORDER_MATCH_INTERVAL = 1000;
-
 const continueFetching = dispatch =>
   setInterval(() => dispatch(requestOrders()), ORDER_FETCH_INTERVAL);
 const continueMatching = dispatch =>
@@ -62,8 +59,6 @@ const initialState: State = {
   latestOrder: null
 };
 
-const FETCH_SIZE = 60;
-
 const errorState = (state: State, error: string): State =>
   flow(
     set('orders.loading', false),
@@ -84,7 +79,7 @@ export default handleActions(
           set('orders.error', null),
           set('orders.loading', !state.orders.data && true)
         )(state),
-        ordersRequest(apiHost(params), responseOders, failNetworkingRequest)
+        ordersRequest(listOrdersURL(params), responseOders, failNetworkingRequest)
       );
     },
     [ORDERS.RESPONSE]: {
