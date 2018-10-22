@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import {View} from 'react-native';
 import PropTypes from 'prop-types';
 import styled from 'styled-components/native';
 import {Container, Text} from '../styled';
@@ -44,8 +45,9 @@ const Title = styled.Text`
 const ErrorComponent = ({retryRequest}: ErrorProps) => (
   <FlexContainer>
     <ErrorContainer>
-      {' '}
-      <Title>Sorry, we {"coudn't"} fetch the orders :(</Title>
+      <View>
+        <Title>Sorry, we coud not fetch the orders :(</Title>
+      </View>
       <RetryButton onPress={retryRequest}>
         <Text color={red}>Click to retry</Text>
       </RetryButton>

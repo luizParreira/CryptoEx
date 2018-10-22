@@ -7,7 +7,7 @@ import reducer, {
   failNetworkingRequest
 } from '../reducer';
 import {ordersRequest} from '../request';
-import {apiHost} from '../constants';
+import {listOrdersURL} from '../constants';
 
 describe('orders', () => {
   const data = [
@@ -43,7 +43,7 @@ describe('orders', () => {
     expect(select.error(state)).toBe(false);
 
     expect(cmd).toEqual(
-      ordersRequest(apiHost({start: 1, size: 60}), responseOders, failNetworkingRequest)
+      ordersRequest(listOrdersURL({start: 1, size: 60}), responseOders, failNetworkingRequest)
     );
   });
 

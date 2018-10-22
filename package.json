@@ -9,10 +9,12 @@
     "lint:css": "stylelint './src/**/*.js'",
     "lint": "yarn run lint:js && yarn run lint:css && yarn run flow",
     "start:ios": "react-native run-ios --simulator 'iPhone XS Max'",
+    "start:android": "react-native run-android",
     "fix-xcode": "react-native fix-xcode"
   },
   "dependencies": {
     "apsl-react-native-button": "^3.1.1",
+    "es6-symbol": "^3.1.1",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "numeral": "^2.0.6",

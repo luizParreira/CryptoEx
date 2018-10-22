@@ -6,9 +6,7 @@ import numeral from 'numeral';
 import {createSelector} from 'reselect';
 import moment from 'moment';
 import {green, red} from '../../view/theme/colors';
-
-const ORDER_BOOK_LIMIT = 20;
-const MARKET_TRADES_LIMIT = 30;
+import {ORDER_BOOK_LIMIT, MARKET_TRADES_LIMIT} from './constants';
 
 const formatPrice = (price: number) => numeral(price).format('$ 0.0');
 const formatPrices = (orders: Orders<OrderType>): Orders<OrderType> =>
