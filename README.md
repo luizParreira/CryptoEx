@@ -10,11 +10,22 @@ This app implements the 3 views:
 
 The app is a React Native app, so, in order to be able to build it, follow the instructions layed out on react-native's [getting started](https://facebook.github.io/react-native/docs/getting-started.html) page. Make sure to select the `Building Projects with Native Code` tab.
 
+### Server
+
+In order for the app to work well, one has to make sure the server is on:
+
+1. Clone the following repo: `git clone git@github.com:btccom/fe-exercise-backend.git`
+2. cd fe-exercise-backend
+3. Instal dependencies: `npm install`
+4. Start server: `node app.js`
+5. The API will be available: `http://localhost:5001/listOrders`
+
 ### iOS
 
 1. Clone this repo and `cd` into the path
 2. Install dependencies: `yarn install`
 3. Run app: `yarn start:ios`
+4. If using xCode 10 and build failed, run: `yarn fix-xcode`
 
 ### Android
 
